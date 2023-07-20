@@ -21,3 +21,8 @@ return
 !q::
     Send, !{f4}
 return
+
+;;启动终端
+!t::
+    Run C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.16.10262.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe
+return
