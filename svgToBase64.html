@@ -19,6 +19,13 @@
                 margin-top: 20px;
                 position: relative;
             }
+            .result__title {
+                display: flex;
+                align-items: baseline;
+            }
+            .result__preview {
+                margin-left: 12px;
+            }
             .copyBox {
                 display: flex;
             }
@@ -44,6 +51,7 @@
                 const input = document.getElementById("svgInput").value;
                 const result = svgToBase64(input);
                 document.getElementById("base64Result").value = result;
+                document.getElementById("preview").src = result;
             }
 
             async function copyToClipboard() {
@@ -77,7 +85,10 @@
         <p>Enter your SVG code below:</p>
         <textarea id="svgInput"></textarea>
         <div class="result">
-            <h2>Base64 Result:</h2>
+            <div class="result__title">
+                <h2>Base64 Result:</h2>
+                <img class="result__preview" id="preview" />
+            </div>
             <textarea id="base64Result" readonly></textarea>
             <div class="copyBox">
                 <button id="copyButton">Copy Base64</button>
